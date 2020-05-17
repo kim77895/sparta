@@ -1,0 +1,11 @@
+.wrap {
+    font-family: 'Nanum Pen Script', cursive;
+    width: 600px;
+    margin: 0 auto;
+    background-color: grey;   
+    
+}
+
+.wrap.card {
+    text-align: center;
+}

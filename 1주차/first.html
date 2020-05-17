@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">   
+    <title>쇼핑</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    
+    <link rel="stylesheet" type="text/css" href = "first.css">  
+
+</head>
+
+<body>
+    <script type="text/javascript" src="first.js"></script>
+
+
+    <div class ="wrap">
+
+    <h1><span class="badge badge-secondary">상세정보</span></h1>
+
+
+        <div    style="text-align: center;" class="card" style="width: 500px;">
+            <img src="https://www.lenovo.com/medias/lenovo-jp-legion-m500-mous-1000x1000-0830.png?context=bWFzdGVyfHJvb3R8MTIyMDgwfGltYWdlL3BuZ3xoZjkvaDJhLzEwNTc0NDIzMDY0NjA2LnBuZ3wxNWNjNzIyYWM0OTkyNGYxOGRkNDcxZWRkMGFjNjQ1OTU3NDM1NTAwNTY0MTlmMmRiOTdlOTI5NGI3NjBiZGE1" width=500px height=500px>
+            <div class="card-body">
+                <span style="font-size:200%;" class="card-title">마우스</span><span>    가격:20000원/개</span>
+                <p class="card-text">마우스.....</p>
+            </div>
+        </div>
+
+        <!-- <div>
+            <img src = "https://www.lenovo.com/medias/lenovo-jp-legion-m500-mous-1000x1000-0830.png?context=bWFzdGVyfHJvb3R8MTIyMDgwfGltYWdlL3BuZ3xoZjkvaDJhLzEwNTc0NDIzMDY0NjA2LnBuZ3wxNWNjNzIyYWM0OTkyNGYxOGRkNDcxZWRkMGFjNjQ1OTU3NDM1NTAwNTY0MTlmMmRiOTdlOTI5NGI3NjBiZGE1" width=500px height=500px>
+            <h1>마우스</h1>  가격: 10000원 / 개
+            <p>마우스~~~~~~~~</p>
+        </div> -->
+    
+        <div>
+            <div>
+                <h1><span class="badge badge-secondary">주문양식</span></h1>
+
+                <!-- <h1>주문하기</h1> -->
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">주문자성함</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="성함" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">수량</span>
+                    </div>
+                    <!-- <input type="text" class="form-control" placeholder="최대3개" aria-label="Username" aria-describedby="addon-wrapping"> -->
+                    <select type = "text" class="custom-select" id="addon-wrapping">
+                        <option selected>최대3개</option>
+                        <option value="1">1개</option>
+                        <option value="2">2개</option>
+                        <option value="3">3개</option>
+                    </select>
+                </div>
+
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">주소</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="주소" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">전화번호</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="ex)010-1234-5678" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+
+            </div>
+            
+            <button onclick="order()" type="button" class="btn btn-info">주문하기</button>
+
+            <script>
+            function order(){
+            alert("주문이 완료되었습니다.");
+            }
+            </script>
+    </div>
+</div>
+
+</body>
+</html>
