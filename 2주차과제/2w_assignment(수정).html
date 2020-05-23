@@ -32,17 +32,22 @@
     })
 
     function check() {
-        if($(`#name`).val()===""){
+        var phonenum = $('#phone').val();
+        var regPhone = /(01[0|1|6|9|7])[-](\d{3}|\d{4})[-](\d{4}$)/g;
+
+        if ($(`#name`).val() === "") {
             alert("이름을 입력하세요");
-        } else if($(`#count`)[0].selectedIndex <= 0){
+        } else if ($(`#count`)[0].selectedIndex <= 0) {
             alert("수량을 입력하세요");
-        } else if($(`#address`).val()===""){
+        } else if ($(`#address`).val() === "") {
             alert("주소를 입력하세요");
-        } else if($(`#phone`).val()===""){
-            alert("전화번호를 입력하세요")
+        } else if (!regPhone.test(phonenum)) {
+            alert('잘못된 휴대폰 번호입니다.');
+            $('#phone').focus();
+            return false;
         } else alert("주문이 완료되었습니다.")
     }
-       
+
 </script>
 
 
@@ -92,7 +97,7 @@
                         <span class="input-group-text" id="addon-wrapping">수량</span>
                     </div>
                     <!-- <input type="text" class="form-control" placeholder="최대3개" aria-label="Username" aria-describedby="addon-wrapping"> -->
-                    <select type="text" class="custom-select" id="count" >
+                    <select type="text" class="custom-select" id="count">
                         <option selected>최대3개</option>
                         <option value="1">1개</option>
                         <option value="2">2개</option>
@@ -105,7 +110,7 @@
                         <span class="input-group-text" id="addon-wrapping">주소</span>
                     </div>
                     <input type="text" class="form-control" placeholder="주소" aria-label="Username"
-                        aria-describedby="addon-wrapping" id="address"> 
+                        aria-describedby="addon-wrapping" id="address">
                 </div>
 
                 <div class="input-group flex-nowrap">

@@ -51,6 +51,23 @@
             border-radius: 5px;
         }
     </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        
+        function openclose(){
+            let status = $(`#post-box`).css('display');
+            if (status === 'block'){
+                $(`#post-box`).hide()
+                $(`#btn-posting-box`).text('포스팅박스 열기')
+            } else {
+                $(`#post-box`).show()
+                $(`#btn-posting-box`).text('포스팅박스 닫기')
+
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -76,7 +93,7 @@
                 <button type="button" class="btn btn-primary">기사저장</button>
             </div>
         </div>
-        <div class="card-columns">
+        <div class="card-columns" id="card-box">
             <div class="card">
                 <img class="card-img-top"
                     src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
