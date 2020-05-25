@@ -1,0 +1,46 @@
+<script>
+    $(document).ready(function () {
+        $('#cards-box').empty('');
+        listing();
+    });
+
+    function listing() {
+        $.ajax({
+            type: "GET",
+            url: "http://spartacodingclub.shop/post",
+            data: {},
+            success: function (response) {
+                let articles = response['articles'];
+                for (let i = 0; i < articles.length; i++) {
+                    let article = articles[i];
+                    make_card(article['comment'], article['desc'], article['image'], article['title'], article['url'])
+                }
+            }
+        })
+    }
+
+    function make_card(comment, desc, image, title, url) {
+        let temp_html = `<div class="card">
+                            <img class="card-img-top" src="${image}" alt="Card image cap">
+                            <div class="card-body">
+                            <a href="${url}" target="_blank" class="card-title">${title}</a>
+                            <p class="card-text">${desc}</p>
+                            <p class="card-text comment">${comment}</p>
+                            </div>
+                        </div>`;
+        $('#cards-box').append(temp_html);
+    }
+
+    function openclose() {
+        // id 값 post-box의 display 값이 block 이면
+        if ($('#post-box').css('display') == 'block') {
+            // post-box를 가리고
+            $('#post-box').hide();
+            $('#btn-posting-box').text('포스팅 박스 열기');
+        } else {
+            // 아니면 post-box를 펴라
+            $('#post-box').show();
+            $('#btn-posting-box').text('포스팅 박스 닫기');
+        }
+    }
+</script>
