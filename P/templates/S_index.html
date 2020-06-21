@@ -68,37 +68,28 @@
     //         alert('요청되었습니다!')
     //     }
   }
-  //리뷰
-  function OP(name) {
-  if ($(`#TB_${name}`).css('display') == "none") {
-     $(`#TB_${name}`).show();
-     $(`#OP_${name}`).text('리뷰 닫기')
-  } else {
-     $(`#TB_${name}`).hide();
-     $(`#OP_${name}`).text('리뷰 보기')
-    }
-  }
+
   //!!봄리뷰!!
   //lhomme리뷰
-  // function OP_lhomme() {
-  //   if ($('#TB_lhomme').css('display') == "none") {
-  //     $('#TB_lhomme').show();
-  //     $('#OP_lhomme').text('리뷰 닫기')
-  //   } else {
-  //     $('#TB_lhomme').hide();
-  //     $('#OP_lhomme').text('리뷰 보기')
-  //   }
-  // }
-  // //ckall리뷰보기
-  // function OP_ckall() {
-  //   if ($('#TB_ckall').css('display') == "none") {
-  //     $('#TB_ckall').show();
-  //     $('#OP_ckall').text('리뷰 닫기')
-  //   } else {
-  //     $('#TB_ckall').hide();
-  //     $('#OP_ckall').text('리뷰 보기')
-  //   }
-  // }
+  function OP_lhomme() {
+    if ($('#TB_lhomme').css('display') == "none") {
+      $('#TB_lhomme').show();
+      $('#OP_lhomme').text('리뷰 닫기')
+    } else {
+      $('#TB_lhomme').hide();
+      $('#OP_lhomme').text('리뷰 보기')
+    }
+  }
+  //ckall리뷰보기
+  function OP_ckall() {
+    if ($('#TB_ckall').css('display') == "none") {
+      $('#TB_ckall').show();
+      $('#OP_ckall').text('리뷰 닫기')
+    } else {
+      $('#TB_ckall').hide();
+      $('#OP_ckall').text('리뷰 보기')
+    }
+  }
   //BYMG리뷰
   function OP_BYMG() {
     if ($('#TB_BYMG').css('display') == "none") {
@@ -272,7 +263,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/">Home
-   <span class="sr-only">(current)</span>
+              <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -358,20 +349,6 @@
               <div class="card-body">
                 <h4 class="card-title">
                   <a>프라다 르옴므</a>
-                  
-        <!--  
-            onclick="OP('ckall'); 에서 ckall 만 변경 하면
-
-             function OP(name) {
-             if ($(`#TB_${name}`).css('display') == "none") {
-                $(`#TB_${name}`).show();
-                $('#OP_ckall').text('리뷰 닫기')
-             } else {
-                $('#TB_ckall').hide();
-                $('#OP_ckall').text('리뷰 보기')
-             }
-            }
-          -->
                   <a href="#" onclick="like('프라다 르옴므')" class="card-footer-item has-text-info">
                     👍
                     <span class="icon">
@@ -389,7 +366,20 @@
                   바로가기</a>
               </div>
               <div class="card-footer">
-                <a class="text-muted" id="OP_lhomme" onclick="OP('lhomme');return false;">리뷰보기</a>
+                <a class="text-muted" id="OP_lhomme" onclick="OP('ckall');return false;">리뷰보기</a>
+                <!--  
+              onclick="OP('ckall'); 에서 ckall 만 변경 하면
+
+             function OP(name) {
+             if ($(`#TB_${name}`).css('display') == "none") {
+                $(`#TB_${name}`).show();
+                $('#OP_ckall').text('리뷰 닫기')
+             } else {
+                $('#TB_ckall').hide();
+                $('#OP_ckall').text('리뷰 보기')
+             }
+  }
+                         -->
                 <table class="table table-dark" id="TB_lhomme" style="display: none;">
                   <thead>
                     <tr>
@@ -411,21 +401,18 @@
                       <td href>
                         <a href="blog.naver.com/ljeony2/221857066060">이렇게 프라다에서 가장 잘 다듬어서 나온 남자향수라고 합니다... </a>
                       </td>
-                      <!-- <td>👍</td> -->
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/iamcrc/221577097037">그러면 프라다 르 옴므 향수에대해 알아보도록 하겠습니다...</a>
                       </td>
-                      <!-- <td>👍</td> -->
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/chqkq1997/221757584889">직원분께 여쭤보니 요즘 프라다 제품중에 잘 나가는 친구라고 하더군요...</a>
                       </td>
-                      <!-- <td>👍</td> -->
                     </tr>
                   </tbody>
                 </table>
@@ -448,20 +435,12 @@
                 <a href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B433771707&frm3=V2">최저가 바로가기</a>
               </div>
               <div class="card-footer">
-                <a class="text-muted" id="OP_ckall" onclick="OP('cakll');return false;">리뷰보기</a>
+                <a class="text-muted" id="OP_ckall" onclick="OP_ckall();return false;">리뷰보기</a>
                 <table class="table table-dark" id="TB_ckall" style="display: none;">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
-                      <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -470,21 +449,18 @@
                       <td href>
                         <a href="https://blog.naver.com/wkdrk3444/221514566332">갑자기 캘빈클라인 향수 CK all을 받았다 줍줍줍 여자한테...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/kagiove/221612169812">CK all 장점 1. 진짜 저렴한 가격 (오프라인에서 구매하면...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/review_diary/221487612947">와우 요즘 너무 부지런해 오늘 리뷰할 향수는 씨케이 올 ck all...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -515,14 +491,6 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
-                      <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -531,14 +499,12 @@
                       <td href>
                         <a href="royalwaterhelp.blog.me/221945166655">향이라면 바이레도 모하비고스트는 정말 난생 처음 맡아본 그런 향... </a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="cloie517.blog.me/221847437602">시작했는데, 바이레도는 워낙 유명한 향수브랜드니까 :) 오늘...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
@@ -546,7 +512,6 @@
                         <a href="blog.naver.com/snow970802/221852381132">이번에 들고 온 아이는 바이레도 ‘모하비 고스트(MOJAVE GHOST)’
                           랍니다...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -577,12 +542,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -593,21 +552,18 @@
                         <a href="blog.naver.com/starliss88/221360372603">올해 9월에 새로 나온 입생의 신상 남자 향수 Y 오 드 퍼퓸 입니다. 아직
                           한국엔...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/konoma/221800214713">입생로랑 남자 향수 퍼퓸 Y - 아이폰11 향수가 다 떨어져가서...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/jinifairy7/221809095113">그렇다고 너무 달콤하면 안 됨 ㅋ 내 남자의 향은 내가 고른다...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -638,12 +594,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -653,21 +603,18 @@
                       <td href>
                         <a href="sj76moon.blog.me/221523503815">사용했던 돌체 앤 가바나 라이트블루~~~ 라이트블루가 새로워졌더라구요...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/konoma/221800214713">제품은 돌체앤가바나 라이트블루 오 인텐스 뿌르옴므 100ml 이에요 돌체앤가바나...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="bblog.naver.com/thswogh916/221298253366">물론 돌체앤가바나 라이트블루 오 인텐스 옴므가 기존 라인업보다는 살짝...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -676,7 +623,7 @@
           </div>
         </div>
         <!--여름-->
-        <div class="col-lg-9">
+        <!-- <div class="col-lg-9"> -->
           <div class="row" id="Summer_list" style="display:none">
             <!--AQD-->
             <div class="col-lg-4 col-md-6 mb-4">
@@ -700,12 +647,6 @@
                         <th scope="col">#</th>
                         <th scope="col">요약</th>
                         <th scope="col">
-                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                            👍
-                            <span class="icon">
-                              <i class="fas fa-thumbs-up"></i>
-                            </span>
-                          </a>
                         </th>
                       </tr>
                     </thead>
@@ -716,14 +657,12 @@
                           <a href="blog.naver.com/happy01happy/221995702412">아쿠아 디 파르마 블루라인에는 가장 유명한 미르토 이외에도
                             아란치아...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>
                           <a href="blog.naver.com/sksxodus1/221907550383">딱인 아쿠아 디 파르마 미르토 파나레아 향수 리뷰해볼게용!! ...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
@@ -731,7 +670,6 @@
                           <a href="blog.naver.com/rabina312/221987844370">아쿠아 디 파르마 미르토(Acqua di parma mirto di panarea)
                             아쿠아 디...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                     </tbody>
                   </table>
@@ -762,12 +700,6 @@
                         <th scope="col">#</th>
                         <th scope="col">요약</th>
                         <th scope="col">
-                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                            👍
-                            <span class="icon">
-                              <i class="fas fa-thumbs-up"></i>
-                            </span>
-                          </a>
                         </th>
                       </tr>
                     </thead>
@@ -777,7 +709,6 @@
                         <td href>
                           <a href="blog.naver.com/clwmrjf/221965867676">라인은 로에베 폴라 이비자 2020 컬렉션에 속한 향수입니다...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
@@ -785,14 +716,12 @@
                           <a href="https://blog.naver.com/la_juventud/221920518449">#내돈내산 향수 로에베 폴라스 이비자 2020 오드뚜왈렛 /
                             50ML 120,000원...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>
                           <a href="blog.naver.com/donus5/221959823526">오늘은 그 중에서 유난히 인상깊었던 향수 ‘로에베 폴라 이비자’의 시향 후기...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                     </tbody>
                   </table>
@@ -823,12 +752,6 @@
                         <th scope="col">#</th>
                         <th scope="col">요약</th>
                         <th scope="col">
-                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                            👍
-                            <span class="icon">
-                              <i class="fas fa-thumbs-up"></i>
-                            </span>
-                          </a>
                         </th>
                       </tr>
                     </thead>
@@ -839,7 +762,6 @@
                           <a href="https://blog.naver.com/takuteru/221867501295">싶었는데~ 아쿠아델엘바 Eau de Parfum For Women
                             클라시카, 알키펠라고...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
@@ -847,7 +769,6 @@
                           <a href="blog.naver.com/o2oo_o/221318932121">아쿠에 델 엘바 클라시카 EDT Acqua dell'Elba Classica EDT
                             50ml / 95,000원 ...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
@@ -855,7 +776,6 @@
                           <a href="https://blog.naver.com/dltmfsla0402/221856102977">바로 아쿠아 델 엘바 향수 덕후인 친구 덕분에 향수를 조금씩
                             알아가고 있는데...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                     </tbody>
                   </table>
@@ -886,12 +806,6 @@
                         <th scope="col">#</th>
                         <th scope="col">요약</th>
                         <th scope="col">
-                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                            👍
-                            <span class="icon">
-                              <i class="fas fa-thumbs-up"></i>
-                            </span>
-                          </a>
                         </th>
                       </tr>
                     </thead>
@@ -901,14 +815,12 @@
                         <td href>
                           <a href="blog.naver.com/merci_eun/221566631764">이번에 톰포드 네롤리 포르토피노 향수를 새로이 영입하면서 써보는 포스팅...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>
                           <a href="blog.naver.com/ieuro1004/221547883286">오늘 블로그는 여름 향수로 제격인 톰포드 네롤리 포르토피노 입니다...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
@@ -916,7 +828,6 @@
                           <a href="blog.naver.com/psy22390/221918784560">톰포드의 네롤리 포르토피노 포르테는 우리가 접할 수 있는 가장 아름다운
                             우디...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                     </tbody>
                   </table>
@@ -947,12 +858,6 @@
                         <th scope="col">#</th>
                         <th scope="col">요약</th>
                         <th scope="col">
-                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                            👍
-                            <span class="icon">
-                              <i class="fas fa-thumbs-up"></i>
-                            </span>
-                          </a>
                         </th>
                       </tr>
                     </thead>
@@ -962,7 +867,6 @@
                         <td href>
                           <a href="ashleydude.blog.me/221964244202">정답은 르 라보 베르가못 입니다! 오늘 보여드리는 향수들은 저번주에 올린...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
@@ -970,7 +874,6 @@
                           <a href="https://blog.naver.com/castqueen/221753640197">르 라보 베르가못 22 오드 퍼퓸 내추럴 스프레이 50ml
                             235,000원...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
@@ -978,7 +881,6 @@
                           <a href="https://blog.naver.com/sonchae/221835268687">원은 르라보 베르가못 입니다 ! 르라보향수의 전반적인 디자인이예요. 그냥
                             아주...</a>
                         </td>
-                        <td>👍</td>
                       </tr>
                     </tbody>
                   </table>
@@ -986,8 +888,6 @@
               </div>
             </div>
           </div>
-
-          <!-- /.row -->
 
         </div>
         <!--가을/겨울-->
@@ -1017,12 +917,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -1032,21 +926,18 @@
                       <td href>
                         <a href="blog.naver.com/zoro1516/221712443442">청주 유소장은 오늘 돌체앤가바나 더 원 그레이 향수를 포스팅해볼게요...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="yellowsoap.blog.me/221466020910">가바나의 더 원 그레이 입니다~ 원래 돌체 앤 가바나 라이트 블루를 사용...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/vivid0060/221434898295">돋보이는 돌체 앤 가바나 더 원 그레이 포 맨 향수를 새롭게 선보입니다...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1077,12 +968,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -1093,7 +978,6 @@
                         <a href="blog.naver.com/lxx_yj__/221624111980">베르사체 에로스 베르사체 오 프레쉬 맨이 더 청량하고 가벼운 향기의 향수라면
                           에로스는...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
@@ -1101,14 +985,12 @@
                         <a href="https://blog.naver.com/avengerscompany/221736074820">꼽는게 베르사체에로스 입니다 그리스 신 에로스와 같이
                           용감무쌍하고 열정적인...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/minhyuk9415/221629066314">찾아보니 베르사체에서 나온 남자향수 에로스가 평이 괜찮아서 데일리로...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1139,12 +1021,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -1154,21 +1030,18 @@
                       <td href>
                         <a href="panlater.blog.me/221756383413">장식효과 탄탄히 고급져보이는 파코라반...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/guccids/221963616974">파코라반 원밀리언 럭키 연령대 파코라반 원밀리언 럭키를 사용하기 전에...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="zizon.pink/221396365615">파코라반 원밀리언 럭키 향수입니다. 예전에 친구가 파코라반 원밀리언을...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1199,12 +1072,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -1215,21 +1082,18 @@
                         <a href="blog.naver.com/gowooni0605/221720244111">가을 겨울이면 무조건 뿌려야할 향이 있으니, 그것은 바로 르라보의
                           떼누아29입니...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="bijou5009.blog.me/221793508922">르 라보 디스커버리 세트 #르라보 #르라보디스커버리세트...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/hiveab/221694511377">오랜만의 포스팅 갑자기 향수 후기가 쓰고 싶었음 #르라보 떼누아...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1260,12 +1124,6 @@
                       <th scope="col">#</th>
                       <th scope="col">요약</th>
                       <th scope="col">
-                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
-                          👍
-                          <span class="icon">
-                            <i class="fas fa-thumbs-up"></i>
-                          </span>
-                        </a>
                       </th>
                     </tr>
                   </thead>
@@ -1275,21 +1133,18 @@
                       <td href>
                         <a href="blog.naver.com/23beauty/221804892318">나르시소 로드리게즈 플뤠르 머스크 와 나르시소 로드리게즈 퓨어머스크...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
                       <td>
                         <a href="blog.naver.com/youridalbit/221803948362">나르시소 로드리게즈 포힘 & 포허 보여드릴게요. 나르시소 로드리게즈...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
                       <td>
                         <a href="blog.naver.com/interestk/221873886836">나르시소 로드리게즈- 그 중에서도 오늘은 포힘 블루 느와르를...</a>
                       </td>
-                      <td>👍</td>
                     </tr>
                   </tbody>
                 </table>

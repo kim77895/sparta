@@ -1,5 +1,9 @@
-from flask import Flask, render_template, request
-from cr import cr
+from flask import Flask, render_template, request, jsonify
+#from cr2 import cr2
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+db = client.dbsparta
 
 app = Flask(__name__)
 # URL 별로 함수명이 같거나,
@@ -24,11 +28,21 @@ def about():
 # index3
 @app.route('/api/list', methods=['GET'])
 def reviews():
-    # 1. mystar 목록 전체를 검색합니다. ID는 제외하고 like 가 많은 순으로 정렬합니다.
-    # 참고) find({},{'_id':False}), sort()를 활용하면 굿!
-    stars = list(db.reviews2.find({},{'_id':True}).sort('like',-1))
-    # 2. 성공하면 success 메시지와 함께 reviews 목록을 클라이언트에 전달합니다.
-    return jsonify({'result': 'success','reviews':P_review})
+    stars = list(db.reviews2.find({}).sort('like',-1))
+    new_stars = []
+    for star in stars:
+        print(star)
+        new_stars.append({
+            'name': star['name'],
+            'img': star['img'],
+            'img': star['img'],
+            'text': star['text'],
+            'like': star['like'],
+            
+
+            
+        })
+    return jsonify({'result': 'success','reviews':new_stars})
 
 
 @app.route('/api/like', methods=['POST'])
@@ -44,7 +58,7 @@ def like():
 
     # 4. mystar 목록에서 name이 name_receive인 문서의 like 를 new_like로 변경합니다.
     # 참고: '$set' 활용하기!
-    db.mystar.update_one({'name':name_receive},{'$set':{'like':new_like}})
+    db.reviews2.update_one({'name':name_receive},{'$set':{'like':new_like}})
 
     # 5. 성공하면 success 메시지를 반환합니다.
     return jsonify({'result': 'success'})

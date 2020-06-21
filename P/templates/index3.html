@@ -63,11 +63,6 @@
     } else {
       alert('요청되었습니다!');
     }
-    //     if(value == ''){
-    //         alert('입력하세요!');
-    //     } else{
-    //         alert('요청되었습니다!')
-    //     }
   }
   
   //!!봄리뷰!!
@@ -257,6 +252,7 @@ $.ajax({
   url: "api/list",
   data: {},
   success: function (response) {
+    console.log(response)
     let P_review = response['reviews']
     for (let i=0;i<P_review.length;i++){
       let review = P_review[i];
@@ -313,7 +309,7 @@ $.ajax({
                 </table>
               </div>
       `
-      $('review-box').append(tem)
+      $('#review-box').append(temp_hmtl)
     }
   }
 
