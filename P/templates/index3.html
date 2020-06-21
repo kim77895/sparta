@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<script>
+  
+  // 봄
+  function Spring_OC() {
+    if ($('#Spring_list').css('display') == "none") {
+      $('#Spring_list').show();
+      $('#Spring').text('봄 추천 향수 닫기')
+    } else {
+      $('#Spring_list').hide();
+      $('#Spring').text('봄 추천 향수 보기')
+    }
+  }
+  // 여름
+  function Summer_OC() {
+    if ($('#Summer_list').css('display') == "none") {
+      $('#Summer_list').show();
+      $('#Summer').text('여름 추천 향수 닫기')
+    } else {
+      $('#Summer_list').hide();
+      $('#Summer').text('여름 추천 향수 보기')
+    }
+  }
+  // 가을/겨울
+  function FW_OC() {
+    if ($('#Fall_list').css('display') == "none") {
+      $('#Fall_list').show();
+      $('#Fall').text('가을/겨울 추천 향수 닫기')
+    } else {
+      $('#Fall_list').hide();
+      $('#Fall').text('가을/겨울 추천 향수 보기')
+    }
+  }
+  // 업데이트
+  function update() {
+    //let value = $('#request').val();
+    // if(value === ''){
+    if ($(`#request`).val() === "") {
+      alert("입력해주세요!");
+    } else {
+      alert('요청되었습니다!');
+    }
+    //     if(value == ''){
+    //         alert('입력하세요!');
+    //     } else{
+    //         alert('요청되었습니다!')
+    //     }
+  }
+  
+  //!!봄리뷰!!
+  //lhomme리뷰
+  function OP_lhomme() {
+    if ($('#TB_lhomme').css('display') == "none") {
+      $('#TB_lhomme').show();
+      $('#OP_lhomme').text('리뷰 닫기')
+    } else {
+      $('#TB_lhomme').hide();
+      $('#OP_lhomme').text('리뷰 보기')
+    }
+  }
+  //ckall리뷰보기
+  function OP_ckall() {
+    if ($('#TB_ckall').css('display') == "none") {
+      $('#TB_ckall').show();
+      $('#OP_ckall').text('리뷰 닫기')
+    } else {
+      $('#TB_ckall').hide();
+      $('#OP_ckall').text('리뷰 보기')
+    }
+  }
+  //BYMG리뷰
+  function OP_BYMG() {
+    if ($('#TB_BYMG').css('display') == "none") {
+      $('#TB_BYMG').show();
+      $('#OP_BYMG').text('리뷰 닫기')
+    } else {
+      $('#TB_BYMG').hide();
+      $('#OP_BYMG').text('리뷰 보기')
+    }
+  }
+  //Yedt리뷰
+  function OP_Yedt() {
+    if ($('#TB_Yedt').css('display') == "none") {
+      $('#TB_Yedt').show();
+      $('#OP_Yedt').text('리뷰 닫기')
+    } else {
+      $('#TB_Yedt').hide();
+      $('#OP_Yedt').text('리뷰 보기')
+    }
+  }
+  //DGLB 리뷰
+  function OP_DGLB() {
+    if ($('#TB_DGLB').css('display') == "none") {
+      $('#TB_DGLB').show();
+      $('#OP_DGLB').text('리뷰 닫기')
+    } else {
+      $('#TB_DGLB').hide();
+      $('#OP_DGLB').text('리뷰 보기')
+    }
+  }
+  
+  //!!여름리뷰!!
+  //AQD리뷰
+  function OP_AQD() {
+    if ($('#TB_AQD').css('display') == "none") {
+      $('#TB_AQD').show();
+      $('#OP_AQD').text('리뷰 닫기')
+    } else {
+      $('#TB_AQD').hide();
+      $('#OP_AQD').text('리뷰 보기')
+    }
+  }
+  //LIZ리뷰
+  function OP_LIZ() {
+    if ($('#TB_LIZ').css('display') == "none") {
+      $('#TB_LIZ').show();
+      $('#OP_LIZ').text('리뷰 닫기')
+    } else {
+      $('#TB_LIZ').hide();
+      $('#OP_LIZ').text('리뷰 보기')
+    }
+  }
+  //아쿠아 델엘바 클라시카:AQDC 리뷰
+  function OP_AQDC() {
+    if ($('#TB_AQDC').css('display') == "none") {
+      $('#TB_AQDC').show();
+      $('#OP_AQDC').text('리뷰 닫기')
+    } else {
+      $('#TB_AQDC').hide();
+      $('#OP_AQDC').text('리뷰 보기')
+    }
+  }
+  //톰포드네롤리:TFNP
+  function OP_TFNP() {
+    if ($('#TB_TFNP').css('display') == "none") {
+      $('#TB_TFNP').show();
+      $('#OP_TFNP').text('리뷰 닫기')
+    } else {
+      $('#TB_TFNP').hide();
+      $('#OP_TFNP').text('리뷰 보기')
+    }
+  }
+  //르라보베르가못:LBT
+  function OP_LBT() {
+    if ($('#TB_LBT').css('display') == "none") {
+      $('#TB_LBT').show();
+      $('#OP_LBT').text('리뷰 닫기')
+    } else {
+      $('#TB_LBT').hide();
+      $('#OP_LBT').text('리뷰 보기')
+    }
+  }
+  
+  //!!F/W리뷰!! 
+  //돌체앤가바나 더원그레이:DGTG
+  function OP_DGTG() {
+    if ($('#TB_DGTG').css('display') == "none") {
+      $('#TB_DGTG').show();
+      $('#OP_DGTG').text('리뷰 닫기')
+    } else {
+      $('#TB_DGTG').hide();
+      $('#OP_DGTG').text('리뷰 보기')
+    }
+  }
+  //베르사체 에로스:VRE
+  function OP_VRE() {
+    if ($('#TB_VRE').css('display') == "none") {
+      $('#TB_VRE').show();
+      $('#OP_VRE').text('리뷰 닫기')
+    } else {
+      $('#TB_VRE').hide();
+      $('#OP_VRE').text('리뷰 보기')
+    }
+  }
+  //파코라반 원밀리언 럭키:PCOL
+  function OP_PCOL() {
+    if ($('#TB_PCOL').css('display') == "none") {
+      $('#TB_PCOL').show();
+      $('#OP_PCOL').text('리뷰 닫기')
+    } else {
+      $('#TB_PCOL').hide();
+      $('#OP_PCOL').text('리뷰 보기')
+    }
+  }
+  //르라보 떼누아:LTA
+  function OP_LTA() {
+    if ($('#TB_LTA').css('display') == "none") {
+      $('#TB_LTA').show();
+      $('#OP_LTA').text('리뷰 닫기')
+    } else {
+      $('#TB_LTA').hide();
+      $('#OP_LTA').text('리뷰 보기')
+    }
+  }
+  //나르시소 로드리게즈:NRR
+  function OP_NRR() {
+    if ($('#TB_NRR').css('display') == "none") {
+      $('#TB_NRR').show();
+      $('#OP_NRR').text('리뷰 닫기')
+    } else {
+      $('#TB_NRR').hide();
+      $('#OP_NRR').text('리뷰 보기')
+    }
+  }
+  
+  //👍
+  function like(name) {
+    // 1. 서버에 1) POST 방식으로, 2) /api/like 라는 url에, 3) name_give라는 이름으로 name을 전달합니다.
+    // 참고) POST 방식이므로 data: {'name_give': name} 과 같은 양식이 되어야합니다!
+    $.ajax({
+      type: "POST",
+      url: "/api/like",
+      data: { 'name_give': name },
+      success: function (response) {
+        if (response['result'] == 'success') {
+          // 2. '좋아요 완료!' 얼럿을 띄웁니다.
+          alert('좋아요 완료!')
+          // 3. 변경된 정보를 반영하기 위해 새로고침합니다.
+          window.location.reload()
+        }
+      }
+    });
+  }
+
+$(document).ready(function(){
+  show_review();
+});
+
+function show_review(){
+$('#review-box').empty()
+
+$.ajax({
+  type:"GET",
+  url: "api/list",
+  data: {},
+  success: function (response) {
+    let P_review = response['reviews']
+    for (let i=0;i<P_review.length;i++){
+      let review = P_review[i];
+
+      let name = review['name']
+      let img = review['img']
+      let link = review['link']
+      let text = review['text']
+      let like = review['like']
+
+      let temp_html = `
+      <div class="card-footer">
+                <a class="text-muted" id="OP_${name}" onclick="OP_${name}();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_${name}" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        👍
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="${link}">${text}</a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="like('${name}')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="blog.naver.com/kagiove/221612169812">CK all 장점 1. 진짜 저렴한 가격 (오프라인에서 구매하면...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="blog.naver.com/review_diary/221487612947">와우 요즘 너무 부지런해 오늘 리뷰할 향수는 씨케이 올 ck all...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      `
+      $('review-box').append(tem)
+    }
+  }
+
+
+})
+}
+</script>
+
+
+<body>
+
+  <!--메뉴-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">MyFragrance</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 상단 3개 이미지 -->
+  <div class="container">
+    <br>
+    <br>
+    <div>
+      <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img class="d-block img-fluid" src="../static/aqua.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="../static/loewe_1.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="../static/TF.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h3 class="my-4">계절별 향수를 추천해드려요</h3>
+        <!--카테고리-->
+        <div class="list-group">
+          <a href="#" class="list-group-item" id="Spring" onclick="Spring_OC();return false;">봄 추천 향수 보기</a>
+          <a href="#" class="list-group-item" id="Summer" onclick="Summer_OC();return false;">여름 추천 향수 보기</a>
+          <a href="#" class="list-group-item" id="Fall" onclick="FW_OC();return false;">가을/겨울 추천 향수 보기</a>
+          <!-- <a href="#" class="list-group-item" id="Winter" onclick="Winter_OC();return false;">겨울 추천 향수 보기</a> -->
+        </div>
+        <br>
+        <!--업데이트요청-->
+        <div class="input-group mb-3">
+          <input id="request" type="text" class="form-control" placeholder="업데이트 원하는 향수를 입력해주세요!"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" onclick="update()" type="button">요청</button>
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <!--봄-->
+        <div class="row" id="Spring_list" style="display:none">
+          <!--프라다 르옴므-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/pra.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>프라다 르옴므</a>
+                </h4>
+                <p class="card-text">#클린#스무스#엘레강스#비누향</p>
+                <p>탑노트:블랙페퍼,아이리스,네롤리
+                <p>
+                <p>미들노트:아이리스,앰버,제라늄,바이올렛</p>
+                <p>베이스노트:앰버,페츌리</p>
+                <a
+                  href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=1920765474&NaPm=ct=kb6di3hc|ci=10ee8b9e1a2ec3156d3315c97eef3dde9f308f44|tr=slsl|sn=17703|hk=0d5e7e1cdd89cd852b3a12beff06190b9ebf07b7&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">최저가
+                  바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_lhomme" onclick="OP_lhomme();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_lhomme" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('프라다 르옴므')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="review-list" id="review-box">
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="blog.naver.com/ljeony2/221857066060">이렇게 프라다에서 가장 잘 다듬어서 나온 남자향수라고 합니다... </a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+                   </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+
+</body>
+
+</html>

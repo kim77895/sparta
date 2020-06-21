@@ -11,7 +11,7 @@ musics = soup.select('#body-content > div.newest-list > div.music-list-wrap > ta
 
 
 for music in musics:
-        rank = music.find('td',{'class':'number'}).text[0:2] 
+        rank = music.find('td',{'class':'number'}).text[0:2]
         #td.number
         title = music.find('td',{'class':'info'}).find("a",{"class":"title ellipsis"}).text
         # td.info > a.title.ellipsis

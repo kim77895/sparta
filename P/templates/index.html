@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<script>
+  // 봄
+  function Spring_OC() {
+    if ($('#Spring_list').css('display') == "none") {
+      $('#Spring_list').show();
+      $('#Spring').text('봄 추천 향수 닫기')
+    } else {
+      $('#Spring_list').hide();
+      $('#Spring').text('봄 추천 향수 보기')
+    }
+  }
+  // 여름
+  function Summer_OC() {
+    if ($('#Summer_list').css('display') == "none") {
+      $('#Summer_list').show();
+      $('#Summer').text('여름 추천 향수 닫기')
+    } else {
+      $('#Summer_list').hide();
+      $('#Summer').text('여름 추천 향수 보기')
+    }
+  }
+  // 가을/겨울
+  function FW_OC() {
+    if ($('#Fall_list').css('display') == "none") {
+      $('#Fall_list').show();
+      $('#Fall').text('가을/겨울 추천 향수 닫기')
+    } else {
+      $('#Fall_list').hide();
+      $('#Fall').text('가을/겨울 추천 향수 보기')
+    }
+  }
+  // 업데이트
+  function update() {
+    //let value = $('#request').val();
+    // if(value === ''){
+    if ($(`#request`).val() === "") {
+      alert("입력해주세요!");
+    } else {
+      alert('요청되었습니다!');
+    }
+    //     if(value == ''){
+    //         alert('입력하세요!');
+    //     } else{
+    //         alert('요청되었습니다!')
+    //     }
+  }
+  
+  //!!봄리뷰!!
+  //lhomme리뷰
+  function OP_lhomme() {
+    if ($('#TB_lhomme').css('display') == "none") {
+      $('#TB_lhomme').show();
+      $('#OP_lhomme').text('리뷰 닫기')
+    } else {
+      $('#TB_lhomme').hide();
+      $('#OP_lhomme').text('리뷰 보기')
+    }
+  }
+  //ckall리뷰보기
+  function OP_ckall() {
+    if ($('#TB_ckall').css('display') == "none") {
+      $('#TB_ckall').show();
+      $('#OP_ckall').text('리뷰 닫기')
+    } else {
+      $('#TB_ckall').hide();
+      $('#OP_ckall').text('리뷰 보기')
+    }
+  }
+  //BYMG리뷰
+  function OP_BYMG() {
+    if ($('#TB_BYMG').css('display') == "none") {
+      $('#TB_BYMG').show();
+      $('#OP_BYMG').text('리뷰 닫기')
+    } else {
+      $('#TB_BYMG').hide();
+      $('#OP_BYMG').text('리뷰 보기')
+    }
+  }
+  //Yedt리뷰
+  function OP_Yedt() {
+    if ($('#TB_Yedt').css('display') == "none") {
+      $('#TB_Yedt').show();
+      $('#OP_Yedt').text('리뷰 닫기')
+    } else {
+      $('#TB_Yedt').hide();
+      $('#OP_Yedt').text('리뷰 보기')
+    }
+  }
+  //DGLB 리뷰
+  function OP_DGLB() {
+    if ($('#TB_DGLB').css('display') == "none") {
+      $('#TB_DGLB').show();
+      $('#OP_DGLB').text('리뷰 닫기')
+    } else {
+      $('#TB_DGLB').hide();
+      $('#OP_DGLB').text('리뷰 보기')
+    }
+  }
+  
+  //!!여름리뷰!!
+  //AQD리뷰
+  function OP_AQD() {
+    if ($('#TB_AQD').css('display') == "none") {
+      $('#TB_AQD').show();
+      $('#OP_AQD').text('리뷰 닫기')
+    } else {
+      $('#TB_AQD').hide();
+      $('#OP_AQD').text('리뷰 보기')
+    }
+  }
+  //LIZ리뷰
+  function OP_LIZ() {
+    if ($('#TB_LIZ').css('display') == "none") {
+      $('#TB_LIZ').show();
+      $('#OP_LIZ').text('리뷰 닫기')
+    } else {
+      $('#TB_LIZ').hide();
+      $('#OP_LIZ').text('리뷰 보기')
+    }
+  }
+  //아쿠아 델엘바 클라시카:AQDC 리뷰
+  function OP_AQDC() {
+    if ($('#TB_AQDC').css('display') == "none") {
+      $('#TB_AQDC').show();
+      $('#OP_AQDC').text('리뷰 닫기')
+    } else {
+      $('#TB_AQDC').hide();
+      $('#OP_AQDC').text('리뷰 보기')
+    }
+  }
+  //톰포드네롤리:TFNP
+  function OP_TFNP() {
+    if ($('#TB_TFNP').css('display') == "none") {
+      $('#TB_TFNP').show();
+      $('#OP_TFNP').text('리뷰 닫기')
+    } else {
+      $('#TB_TFNP').hide();
+      $('#OP_TFNP').text('리뷰 보기')
+    }
+  }
+  //르라보베르가못:LBT
+  function OP_LBT() {
+    if ($('#TB_LBT').css('display') == "none") {
+      $('#TB_LBT').show();
+      $('#OP_LBT').text('리뷰 닫기')
+    } else {
+      $('#TB_LBT').hide();
+      $('#OP_LBT').text('리뷰 보기')
+    }
+  }
+  
+  //!!F/W리뷰!! 
+  //돌체앤가바나 더원그레이:DGTG
+  function OP_DGTG() {
+    if ($('#TB_DGTG').css('display') == "none") {
+      $('#TB_DGTG').show();
+      $('#OP_DGTG').text('리뷰 닫기')
+    } else {
+      $('#TB_DGTG').hide();
+      $('#OP_DGTG').text('리뷰 보기')
+    }
+  }
+  //베르사체 에로스:VRE
+  function OP_VRE() {
+    if ($('#TB_VRE').css('display') == "none") {
+      $('#TB_VRE').show();
+      $('#OP_VRE').text('리뷰 닫기')
+    } else {
+      $('#TB_VRE').hide();
+      $('#OP_VRE').text('리뷰 보기')
+    }
+  }
+  //파코라반 원밀리언 럭키:PCOL
+  function OP_PCOL() {
+    if ($('#TB_PCOL').css('display') == "none") {
+      $('#TB_PCOL').show();
+      $('#OP_PCOL').text('리뷰 닫기')
+    } else {
+      $('#TB_PCOL').hide();
+      $('#OP_PCOL').text('리뷰 보기')
+    }
+  }
+  //르라보 떼누아:LTA
+  function OP_LTA() {
+    if ($('#TB_LTA').css('display') == "none") {
+      $('#TB_LTA').show();
+      $('#OP_LTA').text('리뷰 닫기')
+    } else {
+      $('#TB_LTA').hide();
+      $('#OP_LTA').text('리뷰 보기')
+    }
+  }
+  //나르시소 로드리게즈:NRR
+  function OP_NRR() {
+    if ($('#TB_NRR').css('display') == "none") {
+      $('#TB_NRR').show();
+      $('#OP_NRR').text('리뷰 닫기')
+    } else {
+      $('#TB_NRR').hide();
+      $('#OP_NRR').text('리뷰 보기')
+    }
+  }
+  
+  //👍
+  function like(name) {
+    // 1. 서버에 1) POST 방식으로, 2) /api/like 라는 url에, 3) name_give라는 이름으로 name을 전달합니다.
+    // 참고) POST 방식이므로 data: {'name_give': name} 과 같은 양식이 되어야합니다!
+    $.ajax({
+      type: "POST",
+      url: "/api/like",
+      data: { 'name_give': name },
+      success: function (response) {
+        if (response['result'] == 'success') {
+          // 2. '좋아요 완료!' 얼럿을 띄웁니다.
+          alert('좋아요 완료!')
+          // 3. 변경된 정보를 반영하기 위해 새로고침합니다.
+          window.location.reload()
+        }
+      }
+    });
+  }
+
+
+
+</script>
+
+
+<body>
+
+  <!--메뉴-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">MyFragrance</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 상단 3개 이미지 -->
+  <div class="container">
+    <br>
+    <br>
+    <div>
+      <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img class="d-block img-fluid" src="../static/aqua.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="../static/loewe_1.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block img-fluid" src="../static/TF.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h3 class="my-4">계절별 향수를 추천해드려요</h3>
+        <!--카테고리-->
+        <div class="list-group">
+          <a href="#" class="list-group-item" id="Spring" onclick="Spring_OC();return false;">봄 추천 향수 보기</a>
+          <a href="#" class="list-group-item" id="Summer" onclick="Summer_OC();return false;">여름 추천 향수 보기</a>
+          <a href="#" class="list-group-item" id="Fall" onclick="FW_OC();return false;">가을/겨울 추천 향수 보기</a>
+          <!-- <a href="#" class="list-group-item" id="Winter" onclick="Winter_OC();return false;">겨울 추천 향수 보기</a> -->
+        </div>
+        <br>
+        <!--업데이트요청-->
+        <div class="input-group mb-3">
+          <input id="request" type="text" class="form-control" placeholder="업데이트 원하는 향수를 입력해주세요!"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" onclick="update()" type="button">요청</button>
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <!--봄-->
+        <div class="row" id="Spring_list" style="display:none">
+          <!--프라다 르옴므-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/pra.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>프라다 르옴므</a>
+                </h4>
+                <p class="card-text">#클린#스무스#엘레강스#비누향</p>
+                <p>탑노트:블랙페퍼,아이리스,네롤리
+                <p>
+                <p>미들노트:아이리스,앰버,제라늄,바이올렛</p>
+                <p>베이스노트:앰버,페츌리</p>
+                <a
+                  href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=1920765474&NaPm=ct=kb6di3hc|ci=10ee8b9e1a2ec3156d3315c97eef3dde9f308f44|tr=slsl|sn=17703|hk=0d5e7e1cdd89cd852b3a12beff06190b9ebf07b7&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">최저가
+                  바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_lhomme" onclick="OP_lhomme();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_lhomme" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('프라다 르옴므')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="blog.naver.com/ljeony2/221857066060">이렇게 프라다에서 가장 잘 다듬어서 나온 남자향수라고 합니다... </a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="blog.naver.com/iamcrc/221577097037">그러면 프라다 르 옴므 향수에대해 알아보도록 하겠습니다...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="blog.naver.com/chqkq1997/221757584889">직원분께 여쭤보니 요즘 프라다 제품중에 잘 나가는 친구라고 하더군요...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <!--ckall-->
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/ck.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>CK ALL</a>
+                </h4>
+                <p class="card-text">#무난한#유니섹스#상큼</P>
+                <P>탑노트:오렌지, 베르가못</p>
+                <p>미들노트:자스민,릴리,프리지아</p>
+                <p>엠버,베티버,머스크</p>
+                <a href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B433771707&frm3=V2">최저가 바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_ckall" onclick="OP_ckall();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_ckall" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="https://blog.naver.com/wkdrk3444/221514566332">갑자기 캘빈클라인 향수 CK all을 받았다 줍줍줍 여자한테...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="blog.naver.com/kagiove/221612169812">CK all 장점 1. 진짜 저렴한 가격 (오프라인에서 구매하면...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="blog.naver.com/review_diary/221487612947">와우 요즘 너무 부지런해 오늘 리뷰할 향수는 씨케이 올 ck all...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--바이레도모하비고스트-->
+          <div class="col-lg-4 col-md-6 mb-4">
+
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/BYMG.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>바이레도 모하비 고스트</a>
+                </h4>
+                <p class="card-text">#신비#묘함</p>
+                <p>탑노트:암브레트,자마이칸 네스베리</p>
+                <p>미들노트:바이올렛,샌달우드,매그놀리아</p>
+                <p>베이스노트:찬틸리머스크,시더우드,크리스프앰버</p>
+                <a
+                  href="https://smartstore.naver.com/fast_delivery/products/4934397615?NaPm=ct%3Dkb6emb0g%7Cci%3Dda7d95af5cafe20e086dc905b633b4a1673a8149%7Ctr%3Dslsl%7Csn%3D1223040%7Chk%3D15bf7efe0724eb8429d1920792bb059a731c0f12">최저가
+                  바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_BYMG" onclick="OP_BYMG();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_BYMG" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="royalwaterhelp.blog.me/221945166655">향이라면 바이레도 모하비고스트는 정말 난생 처음 맡아본 그런 향... </a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="cloie517.blog.me/221847437602">시작했는데, 바이레도는 워낙 유명한 향수브랜드니까 :) 오늘...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="blog.naver.com/snow970802/221852381132">이번에 들고 온 아이는 바이레도 ‘모하비 고스트(MOJAVE GHOST)’
+                          랍니다...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--Yedt-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/Yman-4.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>입생로랑 Y edt</a>
+                </h4>
+                <p class="card-text">#유니섹스</p>
+                <p>탑노트:사과,베르가못,생강</p>
+                <p>미들노트:제라늄,세이지,주니퍼베리</p>
+                <p>베이스노트:울리바눔,베티버,통카빈,백향목,앰버우드</p>
+                <a
+                  href="http://www.interpark.com/gate/IPPGateway.do?_method=detail&sc.prdNo=5350434625&sc.bizCd=P01397&sc.shopNo=0000100000&sc.dispNo=016001&utm_medium=affiliate&utm_source=naver&utm_campaign=shop_p11714_p01397&utm_content=price_comparison&NaPm=ct%3Dkb6evrag%7Cci%3D361f5af06983db8a640fed32a9d6a6ea07ff58f1%7Ctr%3Dslsl%7Csn%3D3%7Chk%3D504d1cf9fdf539d7f32f0a14a44498a85f285faf">최저가
+                  바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_Yedt" onclick="OP_Yedt();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_Yedt" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="blog.naver.com/starliss88/221360372603">올해 9월에 새로 나온 입생의 신상 남자 향수 Y 오 드 퍼퓸 입니다. 아직
+                          한국엔...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="blog.naver.com/konoma/221800214713">입생로랑 남자 향수 퍼퓸 Y - 아이폰11 향수가 다 떨어져가서...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="blog.naver.com/jinifairy7/221809095113">그렇다고 너무 달콤하면 안 됨 ㅋ 내 남자의 향은 내가 고른다...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--DGLB-->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="../static/다운로드.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a>돌체엔가바나 라이트블루 오 인텐스 뿌르옴므</a>
+                </h4>
+                <p class="card-text">#지중해#프레시#남성적</p>
+                <p>탑노트:자몽,만다린,핑크페퍼</p>
+                <p>미들노트:아쿠아틱 씨 솔트,주니퍼,로즈마리</p>
+                <p>머스크,앰버우드</p>
+                <a
+                  href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2173807462&NaPm=ct=kb6f8uqo|ci=b9332ecca556d303f9908eb1b5fbca3166f69140|tr=slct|sn=17703|hk=db4736f3a339e608a2b29078d5c2574877f5fbd5&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">최저가
+                  바로가기</a>
+              </div>
+              <div class="card-footer">
+                <a class="text-muted" id="OP_DGLB" onclick="OP_DGLB();return false;">리뷰보기</a>
+                <table class="table table-dark" id="TB_DGLB" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">요약</th>
+                      <th scope="col">
+                        <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                          👍
+                          <span class="icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </span>
+                        </a>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td href>
+                        <a href="sj76moon.blog.me/221523503815">사용했던 돌체 앤 가바나 라이트블루~~~ 라이트블루가 새로워졌더라구요...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>
+                        <a href="blog.naver.com/konoma/221800214713">제품은 돌체앤가바나 라이트블루 오 인텐스 뿌르옴므 100ml 이에요 돌체앤가바나...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>
+                        <a href="bblog.naver.com/thswogh916/221298253366">물론 돌체앤가바나 라이트블루 오 인텐스 옴므가 기존 라인업보다는 살짝...</a>
+                      </td>
+                      <td>👍</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--여름-->
+        <div class="col-lg-9">
+          <div class="row" id="Summer_list" style="display:none">
+            <!--AQD-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/아쿠아디.png" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">아쿠아디파르마 미르토</a>
+                  </h4>
+                  <p class="card-text">#상큼#깔끔#청량감</p>
+                  <p>탑노트:바질,머틀,레몬,베르가못</p>
+                  <p>미들노트:자스민,다마스쿠스</p>
+                  <p>베이스노트:엠버,주니퍼,렌티스크</p>
+                  <a href="http://itempage3.auction.co.kr/DetailView.aspx?ItemNo=B791373897&frm3=V2">최저가 바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_AQD" onclick="OP_AQD();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_AQD" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/happy01happy/221995702412">아쿠아 디 파르마 블루라인에는 가장 유명한 미르토 이외에도 아란치아...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="blog.naver.com/sksxodus1/221907550383">딱인 아쿠아 디 파르마 미르토 파나레아 향수 리뷰해볼게용!! ...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/rabina312/221987844370">아쿠아 디 파르마 미르토(Acqua di parma mirto di panarea) 아쿠아 디...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--LIZ-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/이비자.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">로에베 폴라스 이비자</a>
+                  </h4>
+                  <p class="card-text">#플로럴#보헤미안</p>
+                  <p>탑노트:갈바눔오일,만다린오일,코코넛워터</p>
+                  <p>미들노트:유목,샌드릴리,협죽도 꽃</p>
+                  <p>베이스노트:앰버,파춀리오일,바닐라앱솔루트</p>
+                  <a
+                    href="https://www.sephora.kr/products/loewe-loewe-paulas-ibiza-2020-edt-50ml/v/50ml?utm_source=naver_shopping&utm_content=6073&NaPm=ct%3Dkb6fl8q8%7Cci%3Db6b09c39f678d68def2ae11cefdb3f85ce5fadb0%7Ctr%3Dslsl%7Csn%3D1071970%7Chk%3Dcc2f03e2561088fbca2cf0c2baa759fe767f8266">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_LIZ" onclick="OP_LIZ();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_LIZ" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/clwmrjf/221965867676">라인은 로에베 폴라 이비자 2020 컬렉션에 속한 향수입니다...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="https://blog.naver.com/la_juventud/221920518449">#내돈내산 향수 로에베 폴라스 이비자 2020 오드뚜왈렛 / 50ML 120,000원...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/donus5/221959823526">오늘은 그 중에서 유난히 인상깊었던 향수 ‘로에베 폴라 이비자’의 시향 후기...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--AQDC-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/아쿠아델.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">아쿠아델엘바 클라시카 맨</a>
+                  </h4>
+                  <p class="card-text">#엘바섬#청정한#청럄감</p>
+                  <p>탑노트:오렌지,머틀,가르데니아,자스민</p>
+                  <p>미들노트:록로즈</p>
+                  <p>베이스노트:관목</p>
+                  <a
+                    href="http://ssensefragrance.com/product/detail.html?product_no=95&cate_no=48&display_group=1&cafe_mkt=naver_ks&mkt_in=Y&ghost_mall_id=naver&ref=naver_open&NaPm=ct%3Dkb6g4drs%7Cci%3Da07227df058da0f01e441478f73cc413b4c88103%7Ctr%3Dslsl%7Csn%3D1064822%7Chk%3De197f992d69b2d375f2861f4a14474d8c5b9a1a7">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_AQDC" onclick="OP_AQDC();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_AQDC" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="https://blog.naver.com/takuteru/221867501295">싶었는데~ 아쿠아델엘바 Eau de Parfum For Women 클라시카, 알키펠라고...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="blog.naver.com/o2oo_o/221318932121">아쿠에 델 엘바 클라시카 EDT Acqua dell'Elba Classica EDT 50ml / 95,000원 ...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="https://blog.naver.com/dltmfsla0402/221856102977">바로 아쿠아 델 엘바 향수 덕후인 친구 덕분에 향수를 조금씩 알아가고 있는데...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--톰포드네롤리포르토피노:TFNP-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/톰_포드_네롤리_포르토피노.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">톰포드 네롤리 포르토피노</a>
+                  </h4>
+                  <p class="card-text">#이탈리아해변#바람#물결#싱그러운</p>
+                  <p>탑노트:베르가못,만다린,오렌지,레몬,라벤더,로즈마리</p>
+                  <p>미들노트:오렌지플라워,자스민,네롤리</p>
+                  <p>베이스노트:암브레트씨드,안젤리카</p>
+                  <a
+                    href="http://www.ssg.com/item/itemView.ssg?itemId=1000039886702&siteNo=6001&salestrNo=6001&ckwhere=ssg_naver&appPopYn=n&NaPm=ct%3Dkb6g95u8%7Cci%3D5847512cf2961d8f9f05aaae243139dd8919cca4%7Ctr%3Dslct%7Csn%3D218835%7Chk%3D716f65685d7ee07111512add4e1cdb07b813eda5">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_TFNP" onclick="OP_TFNP();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_TFNP" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/merci_eun/221566631764">이번에 톰포드 네롤리 포르토피노 향수를 새로이 영입하면서 써보는 포스팅...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="blog.naver.com/ieuro1004/221547883286">오늘 블로그는 여름 향수로 제격인 톰포드 네롤리 포르토피노 입니다...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/psy22390/221918784560">톰포드의 네롤리 포르토피노 포르테는 우리가 접할 수 있는 가장 아름다운 우디...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--르라보베르가못:LBT-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/르라보.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">르라보 베르가못22</a>
+                  </h4>
+                  <p class="card-text">#신선함#달콤함#센슈얼#프레쉬</p>
+                  <p>탑노트:시트러스,우드,아로마틱,프레시스파이시,그린</p>
+                  <p>미들노트:앰버,머스크,자몽,베티버,베르가못,바닐라,시더</p>
+                  <p>베이스노트:페티그레인,비터오렌지,스위트앰버,머스크,자몽</p>
+                  <a
+                    href="http://www.hyundaihmall.com/front/pda/itemPtc.do?ReferCode=429&slitmCd=2056444451&utm_source=naver&utm_medium=cps_pcs&utm_campaign=sale&NaPm=ct%3Dkb6giw5c%7Cci%3D1ab482daeaef7598546a58d054fd7b0877350b3b%7Ctr%3Dslsl%7Csn%3D14%7Chk%3D7aa97e492f68362d10fcb351cfe159e28d7e0ca7">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_LBT" onclick="OP_LBT();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_LBT" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="ashleydude.blog.me/221964244202">정답은 르 라보 베르가못 입니다! 오늘 보여드리는 향수들은 저번주에 올린...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="https://blog.naver.com/castqueen/221753640197">르 라보 베르가못 22 오드 퍼퓸 내추럴 스프레이 50ml 235,000원...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="https://blog.naver.com/sonchae/221835268687">원은 르라보 베르가못 입니다 ! 르라보향수의 전반적인 디자인이예요. 그냥 아주...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /.row -->
+
+        </div>
+        <!--가을/겨울--> 
+        <div class="col-lg-9">
+          <div class="row" id="Fall_list" style="display:none">
+            <!--DGTG-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/더원.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">돌체엔가바나 더원그레이</a>
+                  </h4>
+                  <p class="card-text">#직장인#20대중반#세련미</p>
+                  <p>탑노트:자몽,바질,카디멈</p>
+                  <p>미들노트:라벤더,제라늄,클라리세이지</p>
+                  <p>베이스노트:베티버,패츌리,라브다넘,타바코</p>
+                  <a
+                    href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2331738731&NaPm=ct=kb6i43k8|ci=e79a825a015191f62c5ef5041134ebeb0d7d1669|tr=slsl|sn=17703|hk=b43f815a6d3e1b88a7efad3e7c208f2439475eca&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_DGTG" onclick="OP_DGTG();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_DGTG" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/zoro1516/221712443442">청주 유소장은 오늘 돌체앤가바나 더 원 그레이 향수를 포스팅해볼게요...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="yellowsoap.blog.me/221466020910">가바나의 더 원 그레이 입니다~ 원래 돌체 앤 가바나 라이트 블루를 사용...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/vivid0060/221434898295">돋보이는 돌체 앤 가바나 더 원 그레이 포 맨 향수를 새롭게 선보입니다...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--VRE-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/에로스.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">베르사체 에로스</a>
+                  </h4>
+                  <p class="card-text">#클럽#이국적인</p>
+                  <p>탑노트:민트오일,레몬과육,청사과</p>
+                  <p>미들노트:통카빈,바닐라</p>
+                  <p>베이스노트:바닐라빈,오크우드</p>
+                  <a
+                    href="http://www.11st.co.kr/product/SellerProductDetail.tmall?method=getSellerProductDetail&prdNo=2339284714&NaPm=ct=kb6i5ksw|ci=7842ab335fb93c2ae25aaa8a0411d958b621c852|tr=slsl|sn=17703|hk=dcfa1d789de4a71ad32bbedd0403576ef1b9e523&utm_term=&utm_campaign=%B3%D7%C0%CC%B9%F6pc_%B0%A1%B0%DD%BA%F1%B1%B3%B1%E2%BA%BB&utm_source=%B3%D7%C0%CC%B9%F6_PC_PCS&utm_medium=%B0%A1%B0%DD%BA%F1%B1%B3">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_VRE" onclick="OP_VRE();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_VRE" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/lxx_yj__/221624111980">베르사체 에로스 베르사체 오 프레쉬 맨이 더 청량하고 가벼운 향기의 향수라면 에로스는...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="https://blog.naver.com/avengerscompany/221736074820">꼽는게 베르사체에로스 입니다 그리스 신 에로스와 같이 용감무쌍하고 열정적인...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/minhyuk9415/221629066314">찾아보니 베르사체에서 나온 남자향수 에로스가 평이 괜찮아서 데일리로...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--PCOL-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/파코럭키.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">파코라반 원밀리언 럭키</a>
+                  </h4>
+                  <p class="card-text">#달콤#헤이즐넛#코트</p>
+                  <p>탑코트:헤이즐넛,캐시미어</p>
+                  <p>미들노트:그린플럼</p>
+                  <p>베이스노트:세더</p>
+                  <a
+                    href="http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=1744113290&GoodsSale=Y&jaehuid=200001169&NaPm=ct%3Dkb6i6yyg%7Cci%3D3e1f99d828a73e592b827c2c090ca3c702239cf8%7Ctr%3Dslsl%7Csn%3D24%7Chk%3D0b2bb7eecfd675cdf52d6104dc20ad5765e68d48">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_PCOL" onclick="OP_PCOL();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_PCOL" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="panlater.blog.me/221756383413">장식효과 탄탄히 고급져보이는 파코라반...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="blog.naver.com/guccids/221963616974">파코라반 원밀리언 럭키 연령대 파코라반 원밀리언 럭키를 사용하기 전에...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="zizon.pink/221396365615">파코라반 원밀리언 럭키 향수입니다. 예전에 친구가 파코라반 원밀리언을...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--LTA-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/르라떼누아.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">르라보 뗴누아</a>
+                  </h4>
+                  <p class="card-text">#우디#스윗</p>
+                  <p>탑노트:베르가못,무화과,월계수</p>
+                  <p>미들노트:삼나무,베티버,사향</p>
+                  <p>베이스노트:건초,타바코</p>
+                  <a
+                    href="https://smartstore.naver.com/curowoo/products/4802035057?NaPm=ct%3Dkb6i7ulc%7Cci%3Ddc62c24143289f2fb5ce4da46c27f13d015ecf8a%7Ctr%3Dslsl%7Csn%3D727565%7Chk%3D808af008ed3d54f48704f4127f1d213bdc3c116e">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_LTA" onclick="OP_LTA();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_LTA" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/gowooni0605/221720244111">가을 겨울이면 무조건 뿌려야할 향이 있으니, 그것은 바로 르라보의 떼누아29입니...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="bijou5009.blog.me/221793508922">르 라보 디스커버리 세트 #르라보 #르라보디스커버리세트...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/hiveab/221694511377">오랜만의 포스팅 갑자기 향수 후기가 쓰고 싶었음 #르라보 떼누아...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!--NRR-->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="../static/나르시소로드리게.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">나르시소 로드리게즈</a>
+                  </h4>
+                  <p class="card-text">#데일리#우디#확산력좋은</p>
+                  <p>탑노트:넛맥,카디멈</p>
+                  <p>미들노트:머스크</p>
+                  <p>베이스노트:블루시더,블랙에보니</p>
+                  <a
+                    href="http://item.gmarket.co.kr/DetailView/Item.asp?goodscode=1623500367&GoodsSale=Y&jaehuid=200001169&NaPm=ct%3Dkb6i9uco%7Cci%3D6080e23dff5dfa71971ad59f1dca62694fbaa417%7Ctr%3Dslsl%7Csn%3D24%7Chk%3D5f9924b31110f034c0454cf97cb5a1a9788a5bbd">최저가
+                    바로가기</a>
+                </div>
+                <div class="card-footer">
+                  <a class="text-muted" id="OP_NRR" onclick="OP_NRR();return false;">리뷰보기</a>
+                  <table class="table table-dark" id="TB_NRR" style="display: none;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">요약</th>
+                        <th scope="col">
+                          <a href="#" onclick="like('')" class="card-footer-item has-text-info">
+                            👍
+                            <span class="icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </span>
+                          </a>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td href>
+                          <a href="blog.naver.com/23beauty/221804892318">나르시소 로드리게즈 플뤠르 머스크 와 나르시소 로드리게즈 퓨어머스크...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <a href="blog.naver.com/youridalbit/221803948362">나르시소 로드리게즈 포힘 & 포허 보여드릴게요. 나르시소 로드리게즈...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          <a href="blog.naver.com/interestk/221873886836">나르시소 로드리게즈- 그 중에서도 오늘은 포힘 블루 느와르를...</a>
+                        </td>
+                        <td>👍</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container -->
+
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+
+</body>
+
+</html>

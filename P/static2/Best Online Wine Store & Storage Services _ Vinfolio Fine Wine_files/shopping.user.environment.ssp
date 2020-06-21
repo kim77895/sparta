@@ -1,0 +1,31 @@
+
+
+
+
+// The Profile
+SC.ENVIRONMENT.PROFILE = {"firstname":"","paymentterms":null,"phoneinfo":null,"middlename":"","vatregistration":null,"creditholdoverride":null,"lastname":"","internalid":"0","addressbook":null,"campaignsubscriptions":[{"internalid":2,"subscribed":false,"name":"Billing Communication","description":null},{"internalid":1,"subscribed":false,"name":"Marketing","description":null},{"internalid":4,"subscribed":false,"name":"Newsletters","description":null},{"internalid":5,"subscribed":false,"name":"Product Updates","description":null},{"internalid":3,"subscribed":false,"name":"Surveys","description":null}],"isperson":null,"balance":null,"creditcards":null,"companyname":null,"name":null,"emailsubscribe":"F","creditlimit":null,"email":"","isLoggedIn":"F","isRecognized":"F","isGuest":"F","priceLevel":"5","subsidiary":"1","language":"en","currency":{"internalid":"1","symbol":"$","currencyname":"USA","code":"USD","precision":2}};
+
+SC.SESSION = {
+	currency: {"internalid":"1","symbol":"$","code":"USD","name":"USA","currencyname":"USA","isdefault":"T","symbolplacement":1}
+,	language: {"name":"English (U.S.)","isdefault":"T","locale":"en_US","languagename":"English (U.S.)"}
+,	priceLevel: "5"
+,	touchpoints: {"logout":"/sca-dev-kilimanjaro/logOut.ssp?logoff=T&ckabandon=heL_oLquAtnowVrk","customercenter":"https://www.vinfolio.com/sca-dev-kilimanjaro/my_account.ssp?ext=F","serversync":"https://www.vinfolio.com/app/site/backend/syncidentity.nl?c=4558614&n=2&vid=VKyA37quAt3owVSE&chrole=17&ck=heL_oLquAtnowVrk&cktime=175802","viewcart":"/sca-dev-kilimanjaro/goToCart.ssp","login":"/sca-dev-kilimanjaro/checkout.ssp?is=login&login=T","welcome":"/s.nl","checkout":"/sca-dev-kilimanjaro/checkout.ssp?is=checkout","continueshopping":"/","home":"https://www.vinfolio.com","register":"/sca-dev-kilimanjaro/checkout.ssp?is=register&login=T&reset=T&newcust=T"}
+};
+
+SC.ENVIRONMENT.permissions = {"transactions":{"tranCashSale":0,"tranCustCred":0,"tranCustDep":0,"tranCustPymt":0,"tranStatement":0,"tranCustInvc":0,"tranItemShip":0,"tranSalesOrd":0,"tranEstimate":0,"tranRtnAuth":0,"tranDepAppl":0,"tranSalesOrdFulfill":0,"tranFind":0,"tranPurchases":0,"tranPurchasesReturns":0},"lists":{"regtAcctRec":0,"regtNonPosting":0,"listCase":0,"listContact":0,"listCustJob":0,"listCompany":0,"listIssue":0,"listCustProfile":0,"listExport":0,"listFind":0,"listCrmMessage":0}};
+
+// Cases configuration
+
+	SC.ENVIRONMENT.CASES_CONFIG = {"defaultValues":{"statusStart":{"id":"1"},"statusClose":{"id":"5"},"origin":{"id":"-5"}}};
+
+
+//ProductList
+SC.ENVIRONMENT.PRODUCTLIST_ENABLED = true;
+
+if (SC.PROFILE_PROMISE)
+{
+	SC.PROFILE_PROMISE.resolve(SC.ENVIRONMENT.PROFILE);
+}
+
+SC.ENVIRONMENT.published = {};
+

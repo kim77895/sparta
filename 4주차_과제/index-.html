@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>쇼핑</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" type="text/css" href="first.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "https://api.manana.kr/exchange/rate.json",
+            dataType: 'json',
+            success: function (json) {
+                const rate = json[1].rate
+                $('#rate').html(`달러-원 환율 : ${rate}`)
+                $(`#rate`).css("color", "white")
+                $(`#rate`).css("font-size", "30px")
+            }
+        })
+    })
+
+    function check() {
+        let name = $("#order_name").val();
+        let count = $("#order_count").val();
+        let address = $("#order_address").val();
+        let phone = $("#order_phone").val();
+
+        if (name == "") {
+          alert("이름을 입력해주세요");
+          $("#order_name").focus();
+          return;
+        } else if (count == "") {
+          alert("수량을 입력해주세요");
+          $("#order_count").focus();
+          return;
+        } else if (address == "") {
+          alert("주소를 입력해주세요");
+          $("#order_address").focus();
+          return;
+        } else if (phone == "") {
+          alert("휴대폰번호를 입력해주세요");
+          $("#order_phone").focus();
+          return;
+        } else if (!isCellPhone(phone)) {
+          alert(
+            "010-0000-0000으로 입력해주세요"
+          );
+          return;
+        }
+
+        $.ajax({
+          type: "POST",
+          url: "/products",
+          data: { name: name, count: count, phone: phone, address: address },
+          success: function (response) {
+              alert("정상적으로 잘 저장이 되었습니다.")
+              window.location.reload()
+          },
+        });
+      }
+       
+    function listing() {
+        $.ajax({
+          type: "GET",
+          url: "/products",
+          data: {},
+          success: function (response) {
+            console.log(response);
+
+            for (let i = 0; i < response.products.length; i++) {
+              $("#orders-box").append(
+                `
+                <tr>
+                    <td>${response.products[i].name}</td>
+                    <td>${response.products[i].count}</td>
+                    <td>${response.products[i].address}</td>
+                    <td>${response.products[i].phone}</td>
+                </tr>
+                `
+              );
+            }
+          },
+        });
+      }
+
+      function make_card(name, count, address, phone) {
+        let temp_html =
+          "<tr>\
+            <td>" +
+          name +
+          "</td>\
+            <td>" +
+          count +
+          "</td>\
+            <td>" +
+          address +
+          "</td>\
+            <td>" +
+          phone +
+          "</td>\
+          </tr>";
+        $("#orders-box").append(temp_html);
+      }
+</script>
+
+
+<body>
+    <!-- <script type="text/javascript" src="first.js"></script> -->
+
+
+    <div class="wrap">
+
+        <h1><span class="badge badge-secondary">상세정보</span></h1>
+
+
+        <div style="text-align: center;" class="card" style="width: 500px;">
+            <img src="https://www.lenovo.com/medias/lenovo-jp-legion-m500-mous-1000x1000-0830.png?context=bWFzdGVyfHJvb3R8MTIyMDgwfGltYWdlL3BuZ3xoZjkvaDJhLzEwNTc0NDIzMDY0NjA2LnBuZ3wxNWNjNzIyYWM0OTkyNGYxOGRkNDcxZWRkMGFjNjQ1OTU3NDM1NTAwNTY0MTlmMmRiOTdlOTI5NGI3NjBiZGE1"
+                width=500px height=500px>
+            <div class="card-body">
+                <span style="font-size:200%;" class="card-title">마우스</span><span> 가격:20000원/개</span>
+                <p class="card-text">마우스.....</p>
+            </div>
+        </div>
+
+        <div class="d-box" id="rate">
+
+        </div>
+
+        <div>
+            <div>
+                <h1><span class="badge badge-secondary">주문양식</span></h1>            
+            
+        </div>
+        <div class="info">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="order_name"
+              aria-describedby="basic-addon3"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01"
+                >수량</label
+              >
+            </div>
+            <select class="custom-select" id="order_count">
+              <option selected="" value=""> -- 수량을 선택하세요 -- </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">주소</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="order_address"
+              aria-describedby="basic-addon3"
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">전화번호</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="order_phone"
+              aria-describedby="basic-addon3"
+            />
+          </div>
+
+          <div class="order">
+            <button onclick="check()" type="button" class="btn btn-primary">
+              주문하기
+            </button>
+          </div>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
